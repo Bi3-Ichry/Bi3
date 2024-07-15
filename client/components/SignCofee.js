@@ -16,48 +16,51 @@ const SignCofee = ({ navigation }) => {
   };
 
 
-  const HandleSubmit = async () => {
+  // const HandleSubmit = async () => {
     
-      const body = {
-        UserType: 'coffee', 
-        Adress:Adress,
-        Email: email,
-        Password: password,
-        FirstName: firstName,
-        LastName: lastName,
-        Adress:Adress
+  //     const body = {
+  //       UserType: 'coffee', 
+  //       Adress:Adress,
+  //       Email: email,
+  //       Password: password,
+  //       FirstName: firstName,
+  //       LastName: lastName,
+  //       Adress:Adress
       
-      };
-      if (email === '' || password === '',firstName === '' || lastName === ''|| Adress === '') {
-        Alert.alert('Incomplete Information', 'Please fill in all fields.');
-        return;
-      }
-      if (!isEmailValid(email)) {
-        Alert.alert('Invalid Email', 'Please enter a valid email address.');
-        return;
-      }
-      try {
-        if (password.length < 6) {
-          Alert.alert('Invalid Password', 'Password must be at least 6 characters long.');
-          return;
-        }
-      const response = await axios.post(
+  //     };
+  //     if (email === '' || password === '',firstName === '' || lastName === ''|| Adress === '') {
+  //       Alert.alert('Incomplete Information', 'Please fill in all fields.');
+  //       return;
+  //     }
+  //     if (!isEmailValid(email)) {
+  //       Alert.alert('Invalid Email', 'Please enter a valid email address.');
+  //       return;
+  //     }
+  //     try {
+  //       if (password.length < 6) {
+  //         Alert.alert('Invalid Password', 'Password must be at least 6 characters long.');
+  //         return;
+  //       }
+  //     const response = await axios.post(
         
-        `http://${ipAdress}:3000/api/auth/register`,
-        body
-      );
-      navigation.navigate('Login');
-    } catch (error) {
-      console.log(error);
+  //       `http://${ipAdress}:3000/api/auth/register`,
+  //       body
+  //     );
+  //     navigation.navigate('Login');
+  //   } catch (error) {
+  //     console.log(error);
      
-    }
+  //   }
+  // };
+  const navigateTo = () => {
+    navigation.navigate('st2'); 
   };
 
   const navigateToUserAccount = () => {
     navigation.navigate('Login'); 
   };
   return (
-    <SafeAreaView >
+    <SafeAreaView style={styles.container}>
     <ScrollView  >
     
 
@@ -65,59 +68,68 @@ const SignCofee = ({ navigation }) => {
       
 
       <View style={styles.container}>
-      <Image source={require('../image/bonna.jpg')} style={styles.logo} />
+        <Text style={styles.fullname}>Comment vous appelez-vous!</Text>
+        <Text style={styles.name}>Entrez le nom complet que vous utilisez au quotidien.</Text>
+
+      {/* <Image source={require('../image/c.png')} style={styles.logo} /> */}
       <View style={styles.inputContainer}>
 
         <TextInput
           style={styles.input}
           placeholder="Prénom"
+          placeholderTextColor={"#FFFFFF"}
           value={firstName}
           onChangeText={setFirstName}
         />
         <TextInput
           style={styles.input}
-          placeholder="Nom de famille"
+          placeholder="Nom "
+          placeholderTextColor={"#FFFFFF"}
           value={lastName}
           onChangeText={setLastName}
         />
-        <TextInput
+        {/* <TextInput
           style={styles.input}
           placeholder="E-mail"
+          placeholderTextColor={"#FFFFFF"}
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
           keyboardType="email-address"
         
-        />
-        <TextInput
+        /> */}
+        {/* <TextInput
           style={styles.input}
           placeholder="Mot de passe"
+          placeholderTextColor={"#FFFFFF"}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
-        />
-              <TextInput
+        /> */}
+              {/* <TextInput
           style={styles.input}
           placeholder="Poste de chef"
+          placeholderTextColor={"#FFFFFF"}
           value={Adress}
           onChangeText={setAdress}
-        />
-        <TextInput
+        /> */}
+        {/* <TextInput
           style={styles.input}
           placeholder="Badge"
+          placeholderTextColor={"#FFFFFF"}
           value={phoneNumber}
           onChangeText={setPhoneNumber}
           keyboardType="phone-pad"
-        />
+        /> */}
       
       </View>
-      <Button style={styles.button} mode="contained" onPress={HandleSubmit}>
-      S'inscrire
+      <Button style={styles.button} mode="contained" onPress={navigateTo}>
+      Suivant
       </Button>
       <TouchableOpacity
     onPress={navigateToUserAccount}
    >
-     <Text style={styles.createAccount}>Avez-vous un compte? </Text>
+     <Text style={styles.createAccount}>J'ai déjà un compte? </Text>
    </TouchableOpacity>
    </View>
     </ScrollView>
@@ -128,9 +140,25 @@ const SignCofee = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#008080',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  fullname:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginTop:20,
+    marginLeft:-30
+    // marginBottom: 5,
+  },
+  name:{
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginTop:20,
+    marginBottom: 10,
+    marginLeft:-26
   },
   logo: {
     width: 500,
@@ -166,7 +194,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginBottom: 20,
     width: '100%',
-    padding:10
+    padding:10,
+    flexDirection: 'row', // Add this line
+    justifyContent: 'space-between', //
   
   },
   
@@ -174,18 +204,21 @@ const styles = StyleSheet.create({
     color: '#003399',
     fontWeight: 'bold',
     fontSize: 16,
-   
+   marginTop:300
 
-    marginVertical:20,
+    // marginVertical:20,
   },
   input: {
     height: 50,
-    borderColor: '#CCC',
+    borderColor: '#555555',
     borderWidth: 1,
-    marginBottom: 20,
+    marginTop:28,
+    marginBottom: 5,
     paddingHorizontal: 20,
     borderRadius: 25,
-    backgroundColor: '#FFF',
+    backgroundColor: '#1C1E21',
+    color: '#FFFFFF',
+    width:180
   },
   button: {
     backgroundColor: '#003399',
