@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, useColorScheme, View, ImageBackground, ActivityIndicator } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, useColorScheme, View, ActivityIndicator } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
-
-import { RefreshControl } from "react-native";
+import FastImage from 'react-native-fast-image';
 
 function Section({ title }) {
   const isDarkMode = useColorScheme() === 'dark';
@@ -23,66 +22,66 @@ function Section({ title }) {
   );
 }
 
-function Start({navigation}) {
+function Start({ navigation }) {
   const isDarkMode = useColorScheme() === 'dark';
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-      navigation.navigate('Login'); 
-    }, 1000);
+      navigation.navigate('Login');
+    }, 6000);
 
     return () => clearTimeout(timer); // Cleanup timeout if component unmounts
   }, [navigation]);
+  
 
   return (
-    <SafeAreaView style={{backgroundColor: '#fff'}}>
-      <ImageBackground
-     source={require('../image/bonna.jpg')}
-        style={styles.backgroundImage}>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <FastImage
+          source={require('../image/Bi3.gif')}
+          style={styles.backgroundImage}
+          resizeMode={FastImage.resizeMode.cover}
+        />
         {isLoading ? (
           <View style={styles.loadingContainer}>
-            <ActivityIndicator size="large" color="#003399" />
+            {/* <ActivityIndicator size="large" color="red" /> */}
           </View>
         ) : (
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Tabs')}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
             {/* <Text style={styles.buttonText}>Get started</Text> */}
           </TouchableOpacity>
         )}
-      </ImageBackground> 
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
-    // backgroundColor: 'black',
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
-    backgroundColor: '#fff',
   },
   backgroundImage: {
-    
-    width: 500,
-    height: 200,
-    marginTop: 100,
-    marginLeft:-50,
-    padding:20,
-    borderRadius:"100%"
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
   },
   button: {
     alignItems: 'center',
     marginTop: 520,
     width: '50%',
     height: 60,
-
-    // backgroundColor: '#dba617',
-
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 25,
@@ -90,7 +89,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5, 
   },
   buttonText: {
-    // color: 'white',
+    color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -98,9 +97,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize:100,
-    marginTop: 500,
-  //  color: '#003399',
+    fontSize: 30,
+    marginTop: 520,
   },
 });
 

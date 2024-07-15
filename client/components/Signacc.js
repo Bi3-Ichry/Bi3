@@ -16,7 +16,7 @@ const SignACC = ({ navigation }) => {
   };
   return (
     <View style={styles.container}>
-      <Image source={require('../image/bonna.jpg')} style={styles.logo} />
+      {/* <Image source={require('../image/bonna.jpg')} style={styles.logo} /> */}
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={handleUserSignUp}>
           <Text style={styles.buttonText}>Employeur</Text>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#008080',
     
   },
   logo: {

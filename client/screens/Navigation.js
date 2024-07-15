@@ -59,6 +59,7 @@ import editusers from '../components/edituser'
 import CoffeeshopReviews from '../components/coffeeshopreviews'
 import SettingsScreen from '../components/settings';
 import Rapport from '../components/Rapport'
+import inscrit from '../components/inscrit'
 // import { useNavigation } from '@react-navigation/native';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -278,6 +279,7 @@ function NAVSTART() {
         <Stack.Screen name="menu" component={MenuItems} options={{ headerShown: false }} />
         <Stack.Screen name="coffeeProfile" component={coffeeprofile} options={{ headerShown: false }} />
         <Stack.Screen name="Start" component={Start} options={{ headerShown: false }} />
+        <Stack.Screen name="inscrit" component={inscrit} options={{ headerShown: false }} />
 
         <Stack.Screen name="st2" component={Start2} options={{ headerShown: false }} />
         <Stack.Screen name="st3" component={Start3} options={{ headerShown: false }} />

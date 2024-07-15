@@ -48,17 +48,17 @@ console.log(response.data.userId);
   };
 
   const navigateToUserAccount = () => {
-    navigation.navigate('UserAccount');
+    navigation.navigate('CoffeeShopSignUp');
   };
 
   return (
     <View style={styles.container}>
-      <Image source={require('../image/bonna.jpg')} style={styles.logo} />
+      <Image source={require('../image/c.png')} style={styles.logo} />
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="E-mail"
-          placeholderTextColor="#666666"
+          placeholder="Numéro mobile ou e-mail"
+          placeholderTextColor="#CCCCCC"
           keyboardType="email-address"
           value={email}
           onChangeText={setEmail}
@@ -67,7 +67,7 @@ console.log(response.data.userId);
           <TextInput
             style={styles.passwordTextInput}
             placeholder="Mot de passe"
-            placeholderTextColor="#666666"
+            placeholderTextColor="#CCCCCC"
             secureTextEntry={!showPassword}
             value={password}
             onChangeText={setPassword}
@@ -79,11 +79,10 @@ console.log(response.data.userId);
       </View>
       {error && <Text style={styles.errorText}>{error}</Text>}
       <Button style={styles.button} mode="contained" onPress={handleSubmit}>
-        
-Se connecter
+        Se connecter
       </Button>
       <TouchableOpacity onPress={navigateToUserAccount}>
-        <Text style={styles.createAccount}>Vous n'avez pas de compte ? Créer une</Text>
+        <Text style={styles.createAccount}>Créer un compte</Text>
       </TouchableOpacity>
       <Toast />
     </View>
@@ -93,75 +92,81 @@ Se connecter
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#008080',
     alignItems: 'center',
     justifyContent: 'center',
   },
   logo: {
-    width: 300,
-    height: 150,
-    borderRadius:50,
+    width: 100,
+    height: 100,
     marginBottom: 30,
+    borderRadius: 50,
+    
   },
   inputContainer: {
     marginBottom: 20,
     width: '80%',
-    color: 'black',
   },
   input: {
     height: 50,
-    borderColor: '#CCC',
+    borderColor: '#555555',
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 20,
-    borderRadius: 25,
-    backgroundColor: '#FFF',
-    color: 'black',
+    borderRadius: 5,
+    backgroundColor: '#1C1E21',
+    color: '#FFFFFF',
   },
   passwordInput: {
     flexDirection: 'row',
     alignItems: 'center',
-    color: 'black',
   },
   passwordTextInput: {
     flex: 1,
     height: 50,
-    borderColor: '#CCC',
+    borderColor: '#555555',
     borderWidth: 1,
-    marginBottom: 20,
     paddingHorizontal: 20,
-    borderRadius: 25,
-    backgroundColor: '#FFF',
-    color: 'black',
+    borderRadius: 5,
+    backgroundColor: '#1C1E21',
+    color: '#FFFFFF',
   },
   eyeIcon: {
     position: 'absolute',
     right: 10,
-    color: 'black',
   },
   eyeImage: {
     width: 25,
     height: 25,
-    color: 'black',
+    color: '#FFFFFF',
   },
   button: {
-    backgroundColor: '#003399',
+    backgroundColor: '#008080', // Button color
     width: '80%',
     height: 50,
     justifyContent: 'center',
     marginBottom: 20,
-    borderRadius: 25,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buttonHover: {
+    backgroundColor: '#008080', // Darker blue on hover
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
   },
   createAccount: {
-    color: '#003399',
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
   },
+  createAccountHover: {
+    color: '#002060', // Darker blue on hover
+  },
   errorText: {
-    color: 'red',
+    color: '#FF0000',
     marginBottom: 10,
-    color: 'black',
-    
   },
 });
 
