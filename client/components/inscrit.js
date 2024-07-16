@@ -20,22 +20,22 @@ const SignCofee = ({ navigation }) => {
     
       const body = {
         UserType: 'coffee', 
-        Adress:Adress,
-        Email: email,
+        // Adress:Adress,
+        // Email: email,
         Password: password,
-        FirstName: firstName,
-        LastName: lastName,
-        Adress:Adress
+        // FirstName: firstName,
+        // LastName: lastName,
+        // Adress:Adress
       
       };
-      if (email === '' || password === '',firstName === '' || lastName === ''|| Adress === '') {
+      if (password === '') {
         Alert.alert('Incomplete Information', 'Please fill in all fields.');
         return;
       }
-      if (!isEmailValid(email)) {
-        Alert.alert('Invalid Email', 'Please enter a valid email address.');
-        return;
-      }
+      // if (!isEmailValid(email)) {
+      //   Alert.alert('Invalid Email', 'Please enter a valid email address.');
+      //   return;
+      // }
       try {
         if (password.length < 6) {
           Alert.alert('Invalid Password', 'Password must be at least 6 characters long.');
@@ -90,7 +90,7 @@ const SignCofee = ({ navigation }) => {
           value={lastName}
           onChangeText={setLastName}
         /> */}
-        <TextInput
+        {/* <TextInput
           style={styles.input}
           placeholder="Mot de passe"
           placeholderTextColor={"#FFFFFF"}
@@ -99,7 +99,7 @@ const SignCofee = ({ navigation }) => {
           autoCapitalize="none"
           keyboardType="email-address"
         
-        />
+        /> */}
         <TextInput
           style={styles.input}
           placeholder="Confirmer"

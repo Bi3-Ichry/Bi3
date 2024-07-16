@@ -16,42 +16,42 @@ const SignCofee = ({ navigation }) => {
   };
 
 
-  // const HandleSubmit = async () => {
+  const HandleSubmit = async () => {
     
-  //     const body = {
-  //       UserType: 'coffee', 
-  //       Adress:Adress,
-  //       Email: email,
-  //       Password: password,
-  //       FirstName: firstName,
-  //       LastName: lastName,
-  //       Adress:Adress
+      const body = {
+        UserType: 'coffee', 
+        // Adress:Adress,
+        Email: email,
+        // Password: password,
+        // FirstName: firstName,
+        // LastName: lastName,
+        // Adress:Adress
       
-  //     };
-  //     if (email === '' || password === '',firstName === '' || lastName === ''|| Adress === '') {
-  //       Alert.alert('Incomplete Information', 'Please fill in all fields.');
-  //       return;
-  //     }
-  //     if (!isEmailValid(email)) {
-  //       Alert.alert('Invalid Email', 'Please enter a valid email address.');
-  //       return;
-  //     }
-  //     try {
-  //       if (password.length < 6) {
-  //         Alert.alert('Invalid Password', 'Password must be at least 6 characters long.');
-  //         return;
-  //       }
-  //     const response = await axios.post(
+      };
+      if (email === '' ) {
+        Alert.alert('Incomplete Information', 'Please fill in all fields.');
+        return;
+      }
+      if (!isEmailValid(email)) {
+        Alert.alert('Invalid Email', 'Please enter a valid email address.');
+        return;
+      }
+      try {
+        // if (password.length < 6) {
+        //   Alert.alert('Invalid Password', 'Password must be at least 6 characters long.');
+        //   return;
+        // }
+      const response = await axios.post(
         
-  //       `http://${ipAdress}:3000/api/auth/register`,
-  //       body
-  //     );
-  //     navigation.navigate('Login');
-  //   } catch (error) {
-  //     console.log(error);
+        `http://${ipAdress}:3000/api/auth/register`,
+        body
+      );
+      navigation.navigate('inscrit');
+    } catch (error) {
+      console.log(error);
      
-  //   }
-  // };
+    }
+  };
   const navigateTo = () => {
     navigation.navigate('inscrit'); 
   };
