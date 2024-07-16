@@ -81,20 +81,20 @@ const MyComponent = ({navigation}) => {
             source={{ uri: img }}
             style={styles.profileImage}
           >
-            <View style={styles.leftTextContainer}>
+            {/* <View style={styles.leftTextContainer}>
               <View style={styles.textWithIcon}>
                 <Text style={styles.textrate}>4.5</Text>
                 <IconButton icon="star" iconColor='#dba617' size={23} style={styles.starIcon} />
               </View>
-            </View>
+            </View> */}
 
-            <View style={styles.rightTextContainer}>
-              <View style={styles.textWithIcon}>
-                <IconButton icon="google-maps" iconColor='#dba617' size={23} style={styles.locIcon} />
-                <Text style={styles.textloc}>Gabes</Text>
-              </View>
-            </View>
-            <IconButton icon="keyboard-backspace" iconColor='#dba617' size={35} style={styles.backIcon} />
+            {/* <View style={styles.rightTextContainer}> */}
+              {/* <View style={styles.textWithIcon}> */}
+                {/* <IconButton icon="google-maps" iconColor='#dba617' size={23} style={styles.locIcon} /> */}
+                {/* <Text style={styles.textloc}>Gabes</Text> */}
+              {/* </View> */}
+            {/* </View> */}
+            <IconButton icon="keyboard-backspace" iconColor='#008080' size={35} style={styles.backIcon} />
           </ImageBackground>
         </View>
 
@@ -123,12 +123,12 @@ const MyComponent = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.optionsContainer}>
-          <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('AddPacks')}>
+          {/* <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('AddPacks')}>
             <View style={styles.test} >
               <Image source={require("../image/packs.png")} style={styles.optionImage} />
             </View>
             <Text style={styles.optionText}>ADD PACKS</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('AddProducts')}>
             <View style={styles.test} >
               <Image source={require("../image/coffee-cup.png")} style={styles.optionImage} />
@@ -143,12 +143,12 @@ const MyComponent = ({navigation}) => {
             </View>
             <Text style={styles.optionText}>ORDERS</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('CoffeeshopReviews')}>
+          {/* <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('CoffeeshopReviews')}>
             <View style={styles.test} >
               <Image source={require("../image/reviews.png")} style={styles.optionImage} />
             </View>
             <Text style={styles.optionText}>REVIEWS</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('PaymentCardsDetails')}>
@@ -157,12 +157,12 @@ const MyComponent = ({navigation}) => {
             </View>
             <Text style={styles.optionText}>PAYMENT DETAILS</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('TransactionScreenCoffee')}>
+          {/* <TouchableOpacity style={styles.option} onPress={() => navigation.navigate('TransactionScreenCoffee')}>
             <View style={styles.test} >
               <Image source={require("../image/transaction.png")} style={styles.optionImage} />
             </View>
             <Text style={styles.optionText}>TRANSACTIONS</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
         
         {/* Add more options here */}
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
   },
   profileImage: {
     width: '100%',
-    height: 220,
+    height: 190,
     resizeMode: 'cover',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
   option: {
     flex: 1,
     margin: 8,
-    backgroundColor: '#dba617',
+    backgroundColor: '#008080',
     borderRadius: 10,
     elevation: 50,
     shadowColor: 'black',
@@ -337,7 +337,7 @@ const styles = StyleSheet.create({
     
     flex: 1,
     margin: 8,
-    backgroundColor: '#dba617',
+    backgroundColor: '#008080',
     borderRadius: 50,
     elevation: 5,
     shadowColor: 'black',
