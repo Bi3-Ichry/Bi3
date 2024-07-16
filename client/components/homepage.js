@@ -74,11 +74,12 @@ const HomePage = ({ navigation }) => {
   return (
     <ScrollView style={styles.container}>
     <LinearGradient 
-  colors={['rgba(0, 51, 153, 1)', 'rgba(0, 51, 153, 1)']} 
+  colors={['rgba(0, 128, 128, 1)', 'rgba(0, 128, 128, 1)']} 
   start={{x: 1, y: 1}} 
   end={{x: 1, y: 0}} 
   style={styles.topBackground}
 >
+
 
         <View style={styles.top}>
           <IconButton icon="cart-outline" iconColor="#FFF" onPress={toggleNotification} />
@@ -86,12 +87,12 @@ const HomePage = ({ navigation }) => {
         </View>
       </LinearGradient>
       <View style={styles.searchContainer}>
-        <Searchbar color='#003399' onFilterPress={showFilterModal} />
+        <Searchbar color='#008080' onFilterPress={showFilterModal} />
       </View>
-      <View style={styles.categoryBarContainer}>
-        <CategoryBar />
-      </View>
-      <Pub />
+      {/* <View style={styles.categoryBarContainer}> */}
+        {/* <CategoryBar /> */}
+      {/* </View> */}
+      {/* <Pub /> */}
       <View style={styles.top}>
         <Text style={[styles.Texttitlecoffee, { marginLeft: 0, fontFamily:'Poppins Light' }]}>Products of the Day!</Text>
         <TouchableOpacity onPress={seeAll}>
@@ -192,7 +193,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     fontStyle: 'italic',
-    color: '#dba617',
+    color: '#008080',
     textAlign: 'left',
     marginTop: 40,
     marginLeft: 20,
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
   seeAllText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#dba617',
+    color: '#008080',
     marginTop: 40,
     marginRight: 20,
     fontStyle: 'italic',

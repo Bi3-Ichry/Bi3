@@ -16,42 +16,42 @@ const SignCofee = ({ navigation }) => {
   };
 
 
-  // const HandleSubmit = async () => {
+  const HandleSubmit = async () => {
     
-  //     const body = {
-  //       UserType: 'coffee', 
-  //       Adress:Adress,
-  //       Email: email,
-  //       Password: password,
-  //       FirstName: firstName,
-  //       LastName: lastName,
-  //       Adress:Adress
+      const body = {
+        UserType: 'coffee', 
+        Adress:Adress,
+        Email: email,
+        Password: password,
+        FirstName: firstName,
+        LastName: lastName,
+        Adress:Adress
       
-  //     };
-  //     if (email === '' || password === '',firstName === '' || lastName === ''|| Adress === '') {
-  //       Alert.alert('Incomplete Information', 'Please fill in all fields.');
-  //       return;
-  //     }
-  //     if (!isEmailValid(email)) {
-  //       Alert.alert('Invalid Email', 'Please enter a valid email address.');
-  //       return;
-  //     }
-  //     try {
-  //       if (password.length < 6) {
-  //         Alert.alert('Invalid Password', 'Password must be at least 6 characters long.');
-  //         return;
-  //       }
-  //     const response = await axios.post(
+      };
+      if (firstName === '' || lastName === '') {
+        Alert.alert('Incomplete Information', 'Please fill in all fields.');
+        return;
+      }
+      if (!isEmailValid(email)) {
+        Alert.alert('Invalid Email', 'Please enter a valid email address.');
+        return;
+      }
+      try {
+        if (password.length < 6) {
+          Alert.alert('Invalid Password', 'Password must be at least 6 characters long.');
+          return;
+        }
+      const response = await axios.post(
         
-  //       `http://${ipAdress}:3000/api/auth/register`,
-  //       body
-  //     );
-  //     navigation.navigate('Login');
-  //   } catch (error) {
-  //     console.log(error);
+        `http://${ipAdress}:3000/api/auth/register`,
+        body
+      );
+      navigation.navigate('Login');
+    } catch (error) {
+      console.log(error);
      
-  //   }
-  // };
+    }
+  };
   const navigateTo = () => {
     navigation.navigate('st2'); 
   };
@@ -68,7 +68,7 @@ const SignCofee = ({ navigation }) => {
       
 
       <View style={styles.container}>
-        <Text style={styles.fullname}>Comment vous appelez-vous!</Text>
+        <Text style={styles.fullname}>Complte vous information </Text>
         <Text style={styles.name}>Entrez le nom complet que vous utilisez au quotidien.</Text>
 
       {/* <Image source={require('../image/c.png')} style={styles.logo} /> */}
@@ -88,8 +88,10 @@ const SignCofee = ({ navigation }) => {
           value={lastName}
           onChangeText={setLastName}
         />
-        {/* <TextInput
-          style={styles.input}
+        </View>
+        <View  style={styles.inputContainer1}>
+        <TextInput
+          style={styles.input1}
           placeholder="E-mail"
           placeholderTextColor={"#FFFFFF"}
           value={email}
@@ -97,33 +99,34 @@ const SignCofee = ({ navigation }) => {
           autoCapitalize="none"
           keyboardType="email-address"
         
-        /> */}
-        {/* <TextInput
-          style={styles.input}
+        />
+       
+        <TextInput
+          style={styles.input1}
           placeholder="Mot de passe"
           placeholderTextColor={"#FFFFFF"}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
-        /> */}
-              {/* <TextInput
-          style={styles.input}
+        />
+              <TextInput
+          style={styles.input1}
           placeholder="Poste de chef"
           placeholderTextColor={"#FFFFFF"}
           value={Adress}
           onChangeText={setAdress}
-        /> */}
-        {/* <TextInput
-          style={styles.input}
+        />
+        <TextInput
+          style={styles.input1}
           placeholder="Badge"
           placeholderTextColor={"#FFFFFF"}
           value={phoneNumber}
           onChangeText={setPhoneNumber}
           keyboardType="phone-pad"
-        /> */}
+        />
       
-      </View>
-      <Button style={styles.button} mode="contained" onPress={navigateTo}>
+       </View>
+      <Button style={styles.button} mode="contained" onPress={HandleSubmit}>
       Suivant
       </Button>
       <TouchableOpacity
@@ -148,7 +151,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    marginTop:20,
+    marginTop:50,
     marginLeft:-30
     // marginBottom: 5,
   },
@@ -192,13 +195,24 @@ const styles = StyleSheet.create({
     color: '#555',
   },
   inputContainer: {
-    marginBottom: 20,
+    marginBottom: -10,
     width: '100%',
-    padding:10,
+    padding:29,
     flexDirection: 'row', // Add this line
     justifyContent: 'space-between', //
   
   },
+  inputContainer1: {
+    marginBottom: 10,
+    width: '90%',
+    padding:10,
+    // marginTop:50,
+    // marginLeft:-50
+    // flexDirection: 'row', // Add this line
+    // justifyContent: 'space-between', //
+  
+  },
+
   
   createAccount: {
     color: '#003399',
@@ -212,13 +226,25 @@ const styles = StyleSheet.create({
     height: 50,
     borderColor: '#555555',
     borderWidth: 1,
-    marginTop:28,
+    marginTop:22,
     marginBottom: 5,
     paddingHorizontal: 20,
     borderRadius: 25,
     backgroundColor: '#1C1E21',
     color: '#FFFFFF',
     width:180
+  },
+  input1: {
+    height: 50,
+    borderColor: '#555555',
+    borderWidth: 1,
+    marginTop:22,
+    marginBottom: 5,
+    paddingHorizontal: 20,
+    borderRadius: 25,
+    backgroundColor: '#1C1E21',
+    color: '#FFFFFF',
+    width:350
   },
   button: {
     backgroundColor: '#003399',
