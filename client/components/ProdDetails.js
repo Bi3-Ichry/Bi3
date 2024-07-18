@@ -113,11 +113,7 @@ const ProductDetailsPage = ({ navigation }) => {
         navigation.navigate('Tabs');
         AsyncStorage.removeItem('selectedProductId');
     };
-    // const handleRapport = () => {
-    //     navigation.navigate('Rapport');
-    //     // AsyncStorage.removeItem('selectedProductId');
-    // };
-    
+   
 
     const goToHomePage = () => {
         AsyncStorage.removeItem('selectedProductId');
@@ -158,7 +154,7 @@ const ProductDetailsPage = ({ navigation }) => {
     return (
         <ScrollView style={styles.container}>
             <TouchableOpacity onPress={goToHomePage} style={styles.backButton}>
-                <Icon name="arrow-left" size={30} color="#dba617" />
+                <Icon name="arrow-left" size={30} color="#008080" />
             </TouchableOpacity>
             {products.map((product, index) => (
                 <View key={index} style={styles.productContainer}>
@@ -167,19 +163,11 @@ const ProductDetailsPage = ({ navigation }) => {
                         <Text style={styles.name}>{product.name}</Text>
                         <Text style={styles.description}>{product.description}</Text>
                         <View style={styles.bottomContainer}>
-                            <Text style={styles.sectionTitle}>Customize</Text>
+                         
                             <View style={styles.optionContainer}>
                                 <View style={styles.optionButtonsContainer}>
-                                    <Text style={styles.optionTitle}>Size</Text>
-                                    <TouchableOpacity style={[styles.optionButton, selectedSize === 'Small' && styles.selectedOption]} onPress={() => handleSizeSelection('Small')}>
-                                        <Text style={styles.optionButtonText}>Small</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity style={[styles.optionButton, selectedSize === 'Regular' && styles.selectedOption]} onPress={() => handleSizeSelection('Regular')}>
-                                        <Text style={styles.optionButtonText}>Regular</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity style={[styles.optionButton, selectedSize === 'Large' && styles.selectedOption]} onPress={() => handleSizeSelection('Large')}>
-                                        <Text style={styles.optionButtonText}>Large</Text>
-                                    </TouchableOpacity>
+                                   
+                              
                                 </View>
                             </View>
                            
@@ -332,7 +320,7 @@ const styles = StyleSheet.create({
         fontSize: 27,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: '#dba617',
+        color: '#008080',
         marginBottom: 15,
         fontStyle: 'italic'
 
@@ -364,7 +352,7 @@ const styles = StyleSheet.create({
     productPrice: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#dba617',
+        color: '#008080',
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         paddingHorizontal: 10,
@@ -412,7 +400,7 @@ const styles = StyleSheet.create({
     addToCartButton: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#dba617',
+        backgroundColor: '#008080',
         padding: 10,
         borderRadius: 10,
     },
@@ -429,7 +417,7 @@ const styles = StyleSheet.create({
 
     },
     addReviewButton: {
-        backgroundColor: '#dba617',
+        backgroundColor: '#008080',
         padding: 10,
         borderRadius: 10,
     },

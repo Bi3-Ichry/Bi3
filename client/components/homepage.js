@@ -104,21 +104,21 @@ const HomePage = ({ navigation }) => {
         {/* <Text style={[styles.Texttitlecoffee, { marginLeft: 0 }]}>Top Packs of the Day!</Text> */}
       </View>
       <TopPacks navigation={navigation} />
-      <View style={styles.top}>
+      {/* <View style={styles.top}>
         <Text style={[styles.Texttitlecoffee, { marginLeft: 0 }]}>Top Selling Coffee Shops of the Day!</Text>
-      </View>
-      <TopShops navigation={navigation} />
-      <StatusBar style="auto" />
+      </View> */}
+      {/* <TopShops navigation={navigation} /> */}
+      {/* <StatusBar style="auto" /> */}
       <Modal
         visible={showNotification}
         animationType="slide"
         transparent={true}
         onRequestClose={toggleNotification}
       >
-        <View style={styles.notificationModal}>
+        {/* <View style={styles.notificationModal}>
          <Notification/>
           <IconButton icon="close" color="#000" onPress={toggleNotification} />
-        </View>
+        </View> */}
       </Modal>
       <Modal
         visible={filterVisible}
