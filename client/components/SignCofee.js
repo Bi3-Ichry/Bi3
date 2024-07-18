@@ -127,7 +127,7 @@ const SignCofee = ({ navigation }) => {
       
        </View>
       <Button style={styles.button} mode="contained" onPress={HandleSubmit}>
-      Suivant
+      S'inscrit 
       </Button>
       <TouchableOpacity
     onPress={navigateToUserAccount}
